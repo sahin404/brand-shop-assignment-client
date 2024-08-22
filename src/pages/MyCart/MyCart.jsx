@@ -1,11 +1,12 @@
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 
-const Homepage = () => {
+const MyCart = () => {
     return (
         <div>
             <Navbar></Navbar>
+            myCart Page
         </div>
     );
 };
 
-export default Homepage;
+export default MyCart;

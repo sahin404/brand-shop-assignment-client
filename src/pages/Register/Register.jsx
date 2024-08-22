@@ -1,11 +1,12 @@
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 
-const Homepage = () => {
+const Register = () => {
     return (
         <div>
             <Navbar></Navbar>
+            Register Page
         </div>
     );
 };
 
-export default Homepage;
+export default Register;

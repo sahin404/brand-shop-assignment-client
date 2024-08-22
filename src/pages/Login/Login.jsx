@@ -1,11 +1,12 @@
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 
-const Homepage = () => {
+const Login = () => {
     return (
         <div>
             <Navbar></Navbar>
+            login page
         </div>
     );
 };
 
-export default Homepage;
+export default Login;
