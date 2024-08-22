@@ -1,9 +1,9 @@
-import Navbar from "../../SharedComponents/Navbar/Navbar";
+import Banner from "./Banner/Banner";
 
 const Homepage = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <Banner></Banner>
         </div>
     );
 };
