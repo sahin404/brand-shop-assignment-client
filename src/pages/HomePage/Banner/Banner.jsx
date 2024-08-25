@@ -17,7 +17,7 @@ const Banner = () => {
       <div className="absolute top-0 left-0 w-full ">
         <div className="max-w-7xl mx-auto text-white">
           <Navbar></Navbar>
-          <div className="text-center mt-24 p-5">
+          <div className="text-center mt-32 lg:mt-24 p-5">
             Discover top-quality cameras and accessories on our website, your
             ultimate destination for photography essentials. Explore a curated
             selection of products from trusted brands, designed to meet everyQ
