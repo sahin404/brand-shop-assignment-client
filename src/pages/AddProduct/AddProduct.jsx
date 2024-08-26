@@ -4,7 +4,7 @@ const AddProduct = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div></div>
+            <div>this is add product page</div>
         </div>
     );
 };

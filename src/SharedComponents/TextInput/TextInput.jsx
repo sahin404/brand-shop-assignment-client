@@ -3,7 +3,7 @@ import { FaCamera } from "react-icons/fa";
 const TextInput = () => {
   return (
     <div className="my-16 bg-orange-400">
-      <div className=" py-10 flex max-w-7xl mx-auto gap-16 items-center">
+      <div className="py-10 px-5 md:px-0 md:flex max-w-7xl mx-auto gap-16 items-center">
         <div className="flex-1 text-center space-y-3">
           <FaCamera className="mx-auto text-blue-700 text-5xl"></FaCamera>
           <h1 className="text-blue-600 text-3xl">Camera Hut</h1>
@@ -16,7 +16,7 @@ const TextInput = () => {
           </p>
         </div>
 
-        <div className="flex-1 space-y-2">
+        <div className="flex-1 space-y-2 mt-10 md:mt-0">
           <h1>Your Name</h1>
           <input className="w-full p-2 rounded-lg" type="text" name="" placeholder="write your name" />
           <h1>Your Email</h1>
