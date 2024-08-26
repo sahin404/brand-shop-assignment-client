@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -9,11 +9,14 @@ const Login = () => {
   const {signIn, googleSignIn} = useContext(AuthContext);
   const [error,setError] = useState('');
   const navigate = useNavigate();
-
+  const location = useLocation();
+  // console.log(location.state);
     const handleGoogleLogin=()=>{
       googleSignIn()
       .then(()=>{
-        navigate('/');
+        {
+          location?.state? navigate(location.state) : navigate('/');
+        }
       })
       .catch(()=>{
 
@@ -30,7 +33,9 @@ const Login = () => {
         signIn(email,password)
         .then(()=>{
           // console.log('success');
-          navigate('/');
+          {
+            location?.state? navigate(location.state) : navigate('/');
+          }
         })
         .catch(()=>{
           // console.log('wrong');
