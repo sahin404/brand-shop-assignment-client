@@ -2,12 +2,23 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-  const {signIn} = useContext(AuthContext);
+  const {signIn, googleSignIn} = useContext(AuthContext);
   const [error,setError] = useState('');
   const navigate = useNavigate();
+
+    const handleGoogleLogin=()=>{
+      googleSignIn()
+      .then(()=>{
+        navigate('/');
+      })
+      .catch(()=>{
+
+      })
+    }
 
     const handleLogin=e=>{
         e.preventDefault();
@@ -64,13 +75,19 @@ const Login = () => {
             }
           </span>
           <input className="btn btn-block mt-8 bg-black text-white" type="submit" value="Login" />
+          </form>
+
+          <div className="mt-8 text-center">
+            <button className="btn btn-outline" onClick={handleGoogleLogin}> <FaGoogle></FaGoogle> Sign in with Google</button>
+          </div>
+          
           <div className="mt-5 text-center">
             Dont have any Account ? Please{" "}
             <Link className="underline" to="/register">
               Register
             </Link>
           </div>
-        </form>
+    
       </div>
     </div>
   );
