@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import Navbar from "../../SharedComponents/Navbar/Navbar";
 
 const AddProduct = () => {
@@ -12,6 +13,37 @@ const AddProduct = () => {
 
     const newCamera = {name, photo,price, brand_name,type, description};
     // console.log(newCamera);
+    fetch('http://localhost:5000/cameras', {
+      method:'post',
+      headers:{
+        'content-type':'application/json'
+      },
+      body: JSON.stringify(newCamera)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      // console.log(data);
+      if(data.acknowledged){
+        Swal.fire({
+          title: "New Camera Successfully Added!",
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+          }
+        });
+        e.target.reset();
+      }
+    })
   }
   return (
     <div className="max-w-7xl mx-auto">
