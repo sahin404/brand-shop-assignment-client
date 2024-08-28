@@ -8,6 +8,7 @@ import MyCart from "../pages/MyCart/MyCart";
 import PrivateRouter from './../PrivateRouter/PrivateRouter';
 import ShowBrandWiseCamera from "../pages/ShowBrandWiseCamera/ShowBrandWiseCamera";
 import ShowDetails from "../pages/ShowDetails/ShowDetails";
+import UpdateCameraDetails from "../pages/UpdateCameraDetails/UpdateCameraDetails";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +44,11 @@ export const router = createBrowserRouter([
                 path:'/camera/:id',
                 element: <PrivateRouter><ShowDetails></ShowDetails></PrivateRouter>,
                 loader: ({params})=>fetch(`http://localhost:5000/camera/${params.id}`)
+            },
+            {
+                path:'/update/:id',
+                element: <PrivateRouter><UpdateCameraDetails></UpdateCameraDetails></PrivateRouter>,
+                loader: ({params})=>fetch(`http://localhost:5000/update/${params.id}`)
             }
         ]
     }

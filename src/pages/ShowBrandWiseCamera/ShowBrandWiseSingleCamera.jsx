@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ShowBrandWiseSingleCamera = ({ camera }) => {
-  const {_id, brand_name, name, price, type, photo } = camera;
+  const { _id, brand_name, name, price, type, photo } = camera;
   return (
     <div className=" border border-black rounded-lg text-center">
       <div>
@@ -19,17 +19,25 @@ const ShowBrandWiseSingleCamera = ({ camera }) => {
         </div>
         <div className="space-y-4">
           <div>
-          <Link to={`/camera/${_id}`}><button className="w-full btn block btn-primary">See Details</button></Link>
+            <Link to={`/camera/${_id}`}>
+              <button className="w-full btn block btn-primary">
+                See Details
+              </button>
+            </Link>
           </div>
-          <button className="w-full btn btn-neutral">Update</button>
+          <div>
+            <Link to={`/update/${_id}`}>
+              <button className="w-full btn btn-neutral">Update</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-ShowBrandWiseSingleCamera.propTypes={
-  camera:PropTypes.object
-}
+ShowBrandWiseSingleCamera.propTypes = {
+  camera: PropTypes.object,
+};
 
 export default ShowBrandWiseSingleCamera;
